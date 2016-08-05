@@ -14,11 +14,11 @@ def convert(geojson,topojson=None,object_name=False, *args, **kwargs):
             input_dict = {inFile.name[:-8].split('/')[-1]:input_dict}
     elif isinstance(geojson, io.TextIOWrapper):
         input_dict=load(geojson)
-    if 'type' in input_dict:
-        if object_name:
-            input_dict = {object_name:input_dict}
-        else:
-            input_dict = {'name':input_dict}
+    # if 'type' in input_dict:
+    #     if object_name:
+    #         input_dict = {object_name:input_dict}
+    #     else:
+    #         input_dict = {'name':input_dict}
     output_dict = topology(input_dict, *args, **kwargs)
     if isinstance(topojson,str) or isinstance(topojson, str):
         with open(topojson,'w') as f:

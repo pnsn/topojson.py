@@ -112,7 +112,7 @@ def topology (objects, stitchPoles=True,quantization=1e4,id_key='id',property_tr
             geometry['id'] = id_func(geometry)
             if geometry['id'] == None:
                 del geometry['id']
-            properties0 = geometry['properties']
+            properties0 = None #geometry['properties']
             if properties0:
                 properties1 = {}
                 del geometry['properties']
